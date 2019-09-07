@@ -6,22 +6,18 @@ int main() {
 	sf::Event event;
 	sf::Texture WallTextTure;
 	sf::Sprite Wall;
-
+	sf::Vertex vertex;
+	vertex.position = sf::Vector2f(10.f, 50.f);
+	vertex.color = sf::Color::Red;
+	vertex.texCoords = sf::Vector2f(100.f, 100.f);
+	std::vector<sf::Vertex> vertices = { vertex };
 	// loads the wall image and 
 	WallTextTure.loadFromFile("blue.jpg");
-	
 	Wall.setTexture(WallTextTure);
-	Wall.setTextureRect(sf::IntRect(50,50,50,50));
-	Wall.move(64,0);
 	//
 	while (window.isOpen()) {
 		while (window.pollEvent(event)) {
-			for (int i = 19; i < BLOCK_WIDTH; i++) {
-				for (int j = 19; j < BLOCK_HEIGHT; j++) {
-					Wall.setTextureRect(sf::IntRect(50, 50, 50, 50));
-					window.draw(Wall);
-				}
-			}
+			
 			switch (event.type){
 			case sf::Event::Closed:
 				window.close(); break;
@@ -46,9 +42,19 @@ int main() {
 				break;
 			}
 			window.clear();
+			for (int i = 0; i < BLOCK_WIDTH; i++) {
+				for (int j = 0; j < BLOCK_HEIGHT; j++) {
+					if (map1[i][j] == 1) {
+						Wall.setTextureRect(sf::IntRect(80, 80, 80, 80));
+						Wall.setPosition(sf::Vector2f(i * 80, j * 80));
+						window.draw(Wall);
+					}
+				}
+			}
 			window.display();
 		}
 	}
 	return 0;
 }
+
 

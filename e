@@ -1,0 +1,9 @@
+add map and window size in constant.h
+#
+# On branch master
+# Changes to be committed:
+#	modified:   Pacman/Constant.h
+#	modified:   Pacman/Main.cpp
+#	new file:   Pacman/TileMap.cpp
+#	new file:   Pacman/TileMap.h
+#
