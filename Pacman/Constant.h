@@ -1,0 +1,1 @@
+extern int CELL_SIZE = 20;
