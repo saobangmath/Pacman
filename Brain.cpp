@@ -1,6 +1,10 @@
 #include "SFML/Graphics.hpp"
 #include "Brain.h"
 #include <iostream>
+#ifndef CONSTANT
+    #include "Constant.h"
+    #define CONSTANT 1
+#endif // CONSTANT
 using std::cout;
 using std::cerr;
 using std::endl;
@@ -61,7 +65,7 @@ void Brain::run() {
         pacman.update();
 
         renderWindow.clear();
-        // Brain::createMap(renderWindow);
+        Brain::createMap(renderWindow);
         renderWindow.draw(pacman.getCurrentFrame());
 
         renderWindow.display();
@@ -70,31 +74,31 @@ void Brain::run() {
   // delete &pacman;
 }
 
-//void Brain::createMap(sf::RenderWindow &window) {
-//    int map1[BLOCK_WIDTH][BLOCK_HEIGHT] = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-//											 {1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-//											 {1, 0, 1, 1, 0, 1, 1, 1, 0, 1},
-//											 {1, 0, 1, 1, 0, 1, 1, 1, 0, 1},
-//											 {1, 0, 1, 0, 0, 1, 1, 1, 0, 1},
-//											 {1, 0, 1, 0, 1, 1, 1, 1, 0, 1},
-//											 {1, 0, 1, 0, 1, 1, 1, 0, 0, 1},
-//											 {1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
-//											 {1, 0, 0, 0, 0, 0, 0, 0, 1, 1},
-//											 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
-//	sf::Texture WallTextTure;
-//	sf::Sprite Wall;
-//	WallTextTure.loadFromFile("images/blue.jpg");
-//	Wall.setTexture(WallTextTure);
-//	for (int i = 0; i < BLOCK_WIDTH; i++) {
-//		for (int j = 0; j < BLOCK_HEIGHT; j++) {
-//			if (map1[i][j] == 1) {
-//				Wall.setTextureRect(sf::IntRect(CELL_SIZE, CELL_SIZE, CELL_SIZE, CELL_SIZE));
-//				Wall.setPosition(sf::Vector2f(i * CELL_SIZE, j * CELL_SIZE));
-//				window.draw(Wall);
-//			}
-//		}
-//	}
-//}
+void Brain::createMap(sf::RenderWindow &window) {
+    int map1[BLOCK_WIDTH][BLOCK_HEIGHT] = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+											 {1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+											 {1, 0, 1, 1, 0, 1, 1, 1, 0, 1},
+											 {1, 0, 1, 1, 0, 1, 1, 1, 0, 1},
+											 {1, 0, 1, 0, 0, 1, 1, 1, 0, 1},
+											 {1, 0, 1, 0, 1, 1, 1, 1, 0, 1},
+											 {1, 0, 1, 0, 1, 1, 1, 0, 0, 1},
+											 {1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
+											 {1, 0, 0, 0, 0, 0, 0, 0, 1, 1},
+											 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+	sf::Texture WallTextTure;
+	sf::Sprite Wall;
+	WallTextTure.loadFromFile("images/blue.jpg");
+	Wall.setTexture(WallTextTure);
+	for (int i = 0; i < BLOCK_WIDTH; i++) {
+		for (int j = 0; j < BLOCK_HEIGHT; j++) {
+			if (map1[i][j] == 1) {
+				Wall.setTextureRect(sf::IntRect(CELL_SIZE, CELL_SIZE, CELL_SIZE, CELL_SIZE));
+				Wall.setPosition(sf::Vector2f(i * CELL_SIZE, j * CELL_SIZE));
+				window.draw(Wall);
+			}
+		}
+	}
+}
 
 
 

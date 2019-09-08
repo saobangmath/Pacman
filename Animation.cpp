@@ -1,7 +1,4 @@
-#ifndef CONSTANT
-    #include "Constant.h"
-    #define CONSTANT
-#endif // CONSTANT
+
 #include "SFML/Graphics.hpp"
 #include "Animation.h"
 
