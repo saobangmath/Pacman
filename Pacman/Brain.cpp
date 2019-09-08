@@ -8,13 +8,8 @@
 void Brain::run() {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Pacman");
 	sf::Event event;
-	sf::Texture WallTextTure;
-	sf::Sprite Wall;
-	WallTextTure.loadFromFile("blue.jpg");
-	Wall.setTexture(WallTextTure);
 	while (window.isOpen()) {
 		while (window.pollEvent(event)) {
-
 			switch (event.type) {
 			case sf::Event::Closed:
 				window.close();
@@ -41,16 +36,24 @@ void Brain::run() {
 			}
 
 			window.clear();
-			for (int i = 0; i < BLOCK_WIDTH; i++) {
-				for (int j = 0; j < BLOCK_HEIGHT; j++) {
-					if (map1[i][j] == 1) {
-						Wall.setTextureRect(sf::IntRect(CELL_SIZE, CELL_SIZE, CELL_SIZE, CELL_SIZE));
-						Wall.setPosition(sf::Vector2f(i * CELL_SIZE, j * CELL_SIZE));
-						window.draw(Wall);
-					}
-				}
-			}
+			Brain::createMap(window);
 			window.display();
+		}
+	}
+}
+
+void Brain::createMap(sf::RenderWindow &window) {
+	sf::Texture WallTextTure;
+	sf::Sprite Wall;
+	WallTextTure.loadFromFile("blue.jpg");
+	Wall.setTexture(WallTextTure);
+	for (int i = 0; i < BLOCK_WIDTH; i++) {
+		for (int j = 0; j < BLOCK_HEIGHT; j++) {
+			if (map1[i][j] == 1) {
+				Wall.setTextureRect(sf::IntRect(CELL_SIZE, CELL_SIZE, CELL_SIZE, CELL_SIZE));
+				Wall.setPosition(sf::Vector2f(i * CELL_SIZE, j * CELL_SIZE));
+				window.draw(Wall);
+			}
 		}
 	}
 }
