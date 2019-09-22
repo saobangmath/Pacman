@@ -1,6 +1,6 @@
 #pragma once
 #include "PacmanAnimation.h"
-#include "Dot.h"
+#include "Fruit.h"
 #include <vector>
 
 class Brain {
@@ -9,6 +9,7 @@ private:
     sf::Texture spriteSheet;
     PacmanAnimation& setupPacman();
     std::vector<Dot*> setupDots();
+    std::vector<Fruit*> setupFruits();
 
 public:
     Brain();
