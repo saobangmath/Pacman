@@ -13,6 +13,7 @@ class AnimationSpritesSheet {
         std::vector<Frame> frames;
         sf::Sprite target;
         sf::Vector2f position;
+        sf::Vector2f margin;
 
     public:
         AnimationSpritesSheet();
@@ -29,4 +30,7 @@ class AnimationSpritesSheet {
         void setPosition(sf::Vector2f position);
         // get position
         sf::Vector2f getPosition();
+        void setMargin(sf::Vector2f margin);
+        sf::Vector2f getMargine();
+        bool isOverlap(AnimationSpritesSheet&);
 };
