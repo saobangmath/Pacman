@@ -129,13 +129,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Brain.cpp" />
+    <ClCompile Include="Dot.cpp" />
+    <ClCompile Include="EnemyAnimation.cpp" />
+    <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PacmanAnimation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Brain.h" />
     <ClInclude Include="Constant.h" />
+    <ClInclude Include="Dot.h" />
+    <ClInclude Include="Fruit.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="PacmanAnimation.h" />
     <ClInclude Include="TileMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

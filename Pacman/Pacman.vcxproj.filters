@@ -21,6 +21,21 @@
     <ClCompile Include="Brain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dot.cpp">
+      <Filter>Source Files\Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAnimation.cpp">
+      <Filter>Source Files\Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fruit.cpp">
+      <Filter>Source Files\Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PacmanAnimation.cpp">
+      <Filter>Source Files\Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constant.h">
@@ -33,6 +48,18 @@
       <Filter>Source Files\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Brain.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Fruit.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacmanAnimation.h">
+      <Filter>Source Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dot.h">
       <Filter>Source Files\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

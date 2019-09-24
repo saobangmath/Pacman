@@ -2,8 +2,8 @@
 #include "Brain.h"
 #include <iostream>
 #ifndef CONSTANT_H
-    #include "Constant.h"
-    #define CONSTANT_H 1
+#include "Constant.h"
+#define CONSTANT_H 1
 #endif // CONSTANT
 using std::cout;
 using std::cerr;
